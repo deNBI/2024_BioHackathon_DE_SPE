@@ -8,8 +8,8 @@
 
 # copy the docker-compose file to the server
 - name: Copy the docker-compose file to the server
-  ansible.builtin.copy:
-    src: docker-compose.yml
+  ansible.builtin.template:
+    src: docker-compose.yml.j2
     dest: '{{ minio_container_dir }}/docker-compose.yml'
     mode: '0644'
 
@@ -17,4 +17,15 @@
 - name: Create and start services
   community.docker.docker_compose_v2:
     project_src: '{{ minio_container_dir }}'
-    register: container_status
+
+# Verify that the container is running
+- name: Check if Minio container is running
+  community.docker.docker_container_info:
+    name: minio-server
+  register: minio_info
+  failed_when: minio_info.container.State.Status != 'running'
+
+# Print container status message
+- name: Print container running message
+  ansible.builtin.debug:
+    msg: 'Minio container is running! ID: {{ minio_info.container.Id }}'

@@ -1,6 +1,0 @@
----
-# Playbook to deploy Minio on a VM
-- hosts: minio
-  become: yes
-  roles:
-    - geerlingguy.docker

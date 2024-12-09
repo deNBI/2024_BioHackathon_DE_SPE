@@ -1,0 +1,72 @@
+---
+# Playbook to deploy Minio on a VM
+- hosts: minio-server
+  become: yes
+  vars_files:
+    - secret_group_vars/all.yml
+  pre_tasks:
+    - name: Install dependencies
+      apt:
+        name:
+          - python3
+          - python3-venv
+          - python3-pip
+          - ufw
+        state: present
+        update_cache: yes
+
+    - name: Allow SSH (port 22)
+      community.general.ufw:
+        rule: allow
+        port: '22'
+        proto: tcp
+
+    - name: Allow HTTP (port 80)
+      community.general.ufw:
+        rule: allow
+        port: '80'
+        proto: tcp
+
+    - name: Allow HTTPS (port 443)
+      community.general.ufw:
+        rule: allow
+        port: '443'
+        proto: tcp
+
+    - name: Deny all other incoming traffic
+      community.general.ufw:
+        default: deny
+        direction: incoming
+
+    - name: Allow all outgoing traffic
+      community.general.ufw:
+        default: allow
+        direction: outgoing
+
+    - name: Enable UFW
+      community.general.ufw:
+        state: enabled
+        enabled: yes
+  roles:
+    - geerlingguy.docker
+
+    - role: minio-nginx
+      vars:
+        domain_name: '{{ domain_name }}'
+        minio_console_dns_name: '{{ minio_console_dns_name }}'
+        minio_api_dns_name: '{{ minio_api_dns_name }}'
+        ssl_certificate_path: <CHANGEME>
+        ssl_certificate_key_path: <CHANGEME>
+
+    - role: geerlingguy.certbot
+      vars:
+        certbot_create_if_missing: true
+        certbot_create_method: webroot
+        certbot_admin_email: '{{ certbot_admin_email }}'
+        certbot_certs:
+          - domains:
+              - '{{ minio_console_dns_name }}'
+              - '{{ minio_api_dns_name }}'
+            webroot_path: /var/www/certbot
+
+    - minio-server

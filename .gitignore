@@ -4,3 +4,4 @@
 **/.terraform/*
 .venv
 .vault_password
+*ansible.log

@@ -1,0 +1,31 @@
+---
+# tasks file for nginx
+- name: Install nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+
+- name: Start and enable nginx
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: true
+
+- name: Copy the nginx configuration file to sites-available
+  ansible.builtin.template:
+    src: '{{ item }}'
+    dest: /etc/nginx/sites-available/{{ item | regex_replace(".j2", "") }}
+    mode: '0644'
+  with_items:
+    - minio-console-nginx.j2
+    - minio-api-nginx.j2
+
+- name: Create symbolic links to sites-enabled
+  ansible.builtin.file:
+    src: /etc/nginx/sites-available/{{ item }}
+    dest: /etc/nginx/sites-enabled/{{ item }}
+    state: link
+  with_items:
+    - minio-console-nginx
+    - minio-api-nginx
+  notify: Restart nginx

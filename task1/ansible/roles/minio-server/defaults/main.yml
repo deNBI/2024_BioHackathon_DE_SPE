@@ -1,6 +1,6 @@
 ---
 # defaults file for minio-server
-minio_root_user: denbi_tre_admin
-minio_root_password: SCLeMKHZ6Iuyy7wctdkCKkJOWGsxGgBGMfIyecuySqQQr4bqUMtinygupZd8MF0Q
-minio_container_dir: /data/docker-containers/minio-server
+minio_root_user: <CHANGEME>
+minio_root_password: <CHANGEME>
+minio_container_dir: /mnt/docker-containers/minio-server # The de.NBI cloud mounts the ephemeral storage at /mnt
 minio_data_dir: '{{ minio_container_dir }}/minio-data'
