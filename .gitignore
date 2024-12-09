@@ -1,0 +1,6 @@
+.vscode/
+*vault_password
+.terraform.lock.hcl
+**/.terraform/*
+.venv
+.vault_password
