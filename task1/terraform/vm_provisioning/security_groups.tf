@@ -27,6 +27,23 @@ resource "openstack_networking_secgroup_rule_v2" "public-egress" {
   security_group_id = openstack_networking_secgroup_v2.egress-public.id
 }
 
+# Create HTTP security group
+resource "openstack_networking_secgroup_v2" "http-public" {
+  name                 = "${var.name_prefix}_http_public"
+  description          = "[TF] Allow HTTP connections from anywhere"
+  delete_default_rules = "true"
+}
+
+resource "openstack_networking_secgroup_rule_v2" "http-public" {
+  direction         = "ingress"
+  ethertype         = "IPv4"
+  protocol          = "tcp"
+  port_range_min    = 80
+  port_range_max    = 80
+  security_group_id = openstack_networking_secgroup_v2.http-public.id
+}
+
+
 # Create HTTPS security group
 resource "openstack_networking_secgroup_v2" "https-public" {
   name                 = "${var.name_prefix}_https_public"
