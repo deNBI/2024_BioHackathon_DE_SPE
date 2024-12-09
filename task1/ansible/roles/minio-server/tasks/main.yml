@@ -1,0 +1,20 @@
+---
+# tasks file for minio-server
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: '{{ minio_container_dir }}'
+    state: directory
+    mode: '0755'
+
+# copy the docker-compose file to the server
+- name: Copy the docker-compose file to the server
+  ansible.builtin.copy:
+    src: docker-compose.yml
+    dest: '{{ minio_container_dir }}/docker-compose.yml'
+    mode: '0644'
+
+# Start the Minio minio-server container
+- name: Create and start services
+  community.docker.docker_compose_v2:
+    project_src: '{{ minio_container_dir }}'
+    register: container_status

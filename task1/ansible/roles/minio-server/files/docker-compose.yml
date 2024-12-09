@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  minio-serrver:
+    container_name: minio-server
+    image: quay.io/minio/minio:latest
+    restart: always
+    ports:
+      - '9000:9000'   # MinIO API
+      - '9001:9001'   # MinIO Console/Admin UI
+    networks:
+      - minionetwork
+    volumes:
+      - 'minio_data:/data'
+    environment:
+      - MINIO_ROOT_USER=denbi_tre_admin
+      - MINIO_ROOT_PASSWORD=0GNRSvNUYsVAedI5CRf7
+    command: server /data --console-address ":9001"
+
+networks:
+  minionetwork:
+    driver: bridge
