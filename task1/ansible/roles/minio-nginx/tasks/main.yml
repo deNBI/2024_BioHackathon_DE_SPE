@@ -13,19 +13,24 @@
 
 - name: Copy the nginx configuration file to sites-available
   ansible.builtin.template:
-    src: '{{ item }}'
-    dest: /etc/nginx/sites-available/{{ item | regex_replace(".j2", "") }}
+    src: '{{ item.source }}'
+    dest: '/etc/nginx/sites-available/{{ item.dest }}'
     mode: '0644'
+    force: true
   with_items:
-    - minio-console-nginx.j2
-    - minio-api-nginx.j2
+    - source: minio-console-nginx.j2
+      dest: minio-console-nginx
+    - source: minio-api-nginx.j2
+      dest: minio-api-nginx
 
 - name: Create symbolic links to sites-enabled
   ansible.builtin.file:
-    src: /etc/nginx/sites-available/{{ item }}
-    dest: /etc/nginx/sites-enabled/{{ item }}
+    src: '/etc/nginx/sites-available/{{ item.source }}'
+    dest: '/etc/nginx/sites-enabled/{{ item.dest }}'
     state: link
   with_items:
-    - minio-console-nginx
-    - minio-api-nginx
+    - source: minio-console-nginx
+      dest: minio-console-nginx
+    - source: minio-api-nginx
+      dest: minio-api-nginx
   notify: Restart nginx

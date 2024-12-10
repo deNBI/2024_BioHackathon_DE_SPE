@@ -1,7 +1,7 @@
 ---
 # defaults file for nginx
 domain_name: example.com
-minio_console_dns_name: minio-console.{{ domain_name }}
-minio_api_dns_name: minio-api.{{ domain_name }}
-ssl_certificate_path: /etc/letsencrypt/live/{{ domain_name }}/fullchain.pem
-ssl_certificate_key_path: /etc/letsencrypt/live/{{ domain_name }}/privkey.pem
+minio_console_dns_name: minio-console.{{ domain }}
+minio_api_dns_name: minio-api.{{ domain }}
+ssl_certificate_path: /etc/letsencrypt/live/{{ domain }}/fullchain.pem
+ssl_certificate_key_path: /etc/letsencrypt/live/{{ domain }}/privkey.pem

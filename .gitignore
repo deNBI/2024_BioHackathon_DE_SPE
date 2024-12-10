@@ -5,3 +5,5 @@
 .venv
 .vault_password
 *ansible.log
+*collections
+*geerlingguy.*

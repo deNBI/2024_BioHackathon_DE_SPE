@@ -1,5 +1,5 @@
 upstream minio_api {
-    server minio:9000;
+    server 127.0.0.1:9000;
 }
 
 server {
@@ -21,7 +21,7 @@ server {
 }
 
 server {
-    listen       443;
+    listen 443 ssl;
     listen  [::]:443 ssl;
     server_name  "{{ minio_api_dns_name}}";
 

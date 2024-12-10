@@ -46,27 +46,29 @@
     - name: Enable UFW
       community.general.ufw:
         state: enabled
-        enabled: yes
   roles:
     - geerlingguy.docker
 
     - role: minio-nginx
       vars:
-        domain_name: '{{ domain_name }}'
-        minio_console_dns_name: '{{ minio_console_dns_name }}'
-        minio_api_dns_name: '{{ minio_api_dns_name }}'
-        ssl_certificate_path: <CHANGEME>
-        ssl_certificate_key_path: <CHANGEME>
+        domain_name: '{{ domain }}'
+        minio_console_dns_name: '{{ minio_console_dns }}'
+        minio_api_dns_name: '{{ minio_api_dns }}'
+        ssl_certificate_path: /etc/letsencrypt/live/{{ minio_console_dns_name }}/fullchain.pem
+        ssl_certificate_key_path: /etc/letsencrypt/live/{{ minio_console_dns_name }}/privkey.pem
 
     - role: geerlingguy.certbot
       vars:
         certbot_create_if_missing: true
-        certbot_create_method: webroot
-        certbot_admin_email: '{{ certbot_admin_email }}'
+        certbot_create_extra_args: ''
+        certbot_create_method: standalone
+        certbot_admin_email: '{{ admin_email }}'
+        certbot_create_standalone_stop_services:
+          - nginx
         certbot_certs:
           - domains:
-              - '{{ minio_console_dns_name }}'
-              - '{{ minio_api_dns_name }}'
-            webroot_path: /var/www/certbot
+              - '{{ minio_console_dns }}'
+              - '{{ minio_api_dns }}'
+            webroot: '/var/www/certbot'
 
     - minio-server
