@@ -29,3 +29,16 @@
 - name: Print container running message
   ansible.builtin.debug:
     msg: 'Minio container is running! ID: {{ minio_info.container.Id }}'
+
+# Copy the LetsEncrypt certificate to the docker container directory to enable SSE-C
+- name: Copy the LetsEncrypt certificate to the docker container directory
+  ansible.builtin.copy:
+    src: '{{ item.source }}'
+    dest: '{{ minio_certs_dir }}/{{ item.dest }}'
+    mode: '0644'
+  with_items:
+    - source: '{{ minio_public_cert }}'
+      dest: public.crt
+    - source: '{{ minio_private_key }}'
+      dest: private.key
+  when: minio_public_cert is defined and minio_private_key is defined and minio_public_cert != '' and minio_private_key != ''

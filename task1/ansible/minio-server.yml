@@ -71,4 +71,7 @@
               - '{{ minio_api_dns }}'
             webroot: '/var/www/certbot'
 
-    - minio-server
+    - role: minio-server
+      vars:
+        minio_public_cert: '{{ ssl_certificate_path }}'
+        minio_private_key: '{{ ssl_certificate_key_path }}'

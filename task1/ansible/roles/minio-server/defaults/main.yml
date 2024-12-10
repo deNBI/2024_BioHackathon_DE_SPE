@@ -4,3 +4,6 @@ minio_root_user: <CHANGEME>
 minio_root_password: <CHANGEME>
 minio_container_dir: /mnt/docker-containers/minio-server # The de.NBI cloud mounts the ephemeral storage at /mnt
 minio_data_dir: '{{ minio_container_dir }}/minio-data'
+minio_certs_dir: '{{ minio_container_dir }}/certs'
+minio_public_cert: ''
+minio_private_key: ''

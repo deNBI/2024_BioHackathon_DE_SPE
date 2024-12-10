@@ -45,6 +45,6 @@ server {
         proxy_set_header Connection "";
         chunked_transfer_encoding off;
 
-        proxy_pass http://minio_api;
+        proxy_pass https://minio_api;
     }
 }
