@@ -1,0 +1,10 @@
+- This directory is a place holder for minio policies.
+- Policy file name: `restricted_oidc_policy.json`
+  - This policy is used to restrict access to a specific bucket of all users logged in via Elixir LS AAI.
+  - The members must be added to the deNBI membership group in the Elixir AAI.
+  - The bucket name is `ls-login-users-bucket`.
+  - The policy is attached to the bucket.
+  - The policy will allow users to list the bucket, create a "folder" in the bucket and this "folder" name should be the user's username that they use during LS AAI registration.
+    - If you are not sure of your username, please login to your [profile](https://profile.aai.lifescience-ri.eu/) and the attribute is `LS Username`.
+  - The policy restricts you to list other users data in their own "folder".
+  - The policy allows you to `put` and `get` objects in your own "folder".
