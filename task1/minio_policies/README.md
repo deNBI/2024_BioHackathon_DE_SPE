@@ -8,3 +8,5 @@
     - If you are not sure of your username, please login to your [profile](https://profile.aai.lifescience-ri.eu/) and the attribute is `LS Username`.
   - The policy restricts you to list other users data in their own "folder".
   - The policy allows you to `put` and `get` objects in your own "folder".
+- Policy file name: `restricted_user_policy.json`
+  - This policy is used to restrict access to a specific bucket to a specific set of users logged in via Elixir LS AAI.
