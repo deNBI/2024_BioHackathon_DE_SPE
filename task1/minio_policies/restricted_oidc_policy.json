@@ -1,0 +1,44 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Sid": "AllowListBucket",
+          "Effect": "Allow",
+          "Action": [
+              "s3:ListBucket"
+          ],
+          "Resource": [
+              "arn:aws:s3:::ls-login-users-bucket"
+          ]
+      },
+      {
+          "Sid": "AllowUserObjectActions",
+          "Effect": "Allow",
+          "Action": [
+              "s3:GetObject",
+              "s3:PutObject"
+          ],
+          "Resource": [
+              "arn:aws:s3:::ls-login-users-bucket/${jwt:preferred_username}/*"
+          ]
+      },
+      {
+          "Sid": "DenyListOtherUserPaths",
+          "Effect": "Deny",
+          "Action": [
+              "s3:ListBucket"
+          ],
+          "Resource": [
+              "arn:aws:s3:::ls-login-users-bucket/*"
+          ],
+          "Condition": {
+              "StringNotLike": {
+                  "s3:prefix": [
+                      "",
+                      "${jwt:preferred_username}/*"
+                  ]
+              }
+          }
+      }
+  ]
+}
