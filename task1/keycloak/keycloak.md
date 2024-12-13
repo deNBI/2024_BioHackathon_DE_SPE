@@ -126,7 +126,7 @@ On the next page you can activate **Client authentication**.
 
 ![Activate Client Authentication](img/clients_3.png)
 
-On the next page the most importent field is Valid redirect URIs which sets what URIs Keycloak accepts for **10. Allow Access To Restricted Resource**. We add `https://s3dev.bi.denbi.de/authorize` for testing purposes
+On the next page the most importent field is Valid redirect URIs which sets what URIs Keycloak accepts for **10. Allow Access To Restricted Resource**. We add `https://s3dev.bi.denbi.de/authorize` for testing purposes only
 
 ![Login](img/clients_4.png)
 
@@ -147,6 +147,12 @@ Since we have registered LS AAI (with display name `LSAAI`) as an Identity Provi
 ![LSAAI login2](img/lsaai.png)
 
 Now the user needs to 6. pass LS AAI which then 7. redirects the response to Keycloak https://s3dev.bi.denbi.de:8080/realms/Test/broker/oidc/endpoint?code=CODE1&state=STATE1 then 8. Keycloak might add additional information and 9. redirects to your service with https://s3dev.bi.denbi.de/authorize?session_state=STATE2&code=CODE2 and then 10. your service can give access to the resource.
+
+#### Accessing Keycloak With Your Service
+
+Keycloaks well known: `keycloakhost:keycloakport/realms/{realm}/.well-known/openid-configuration` so for our test https://s3dev.bi.denbi.de:8080/realms/Test/.well-known/openid-configuration
+
+In order to connect to Keycloak use a package like oic and [implement a client](https://pyoidc.readthedocs.io/en/latest/examples/rp.html). Sadly, time didn't allow us to present a tested client implementation yet. This might be done in the future.
 
 ## Important Documentation
 
