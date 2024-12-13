@@ -1,0 +1,56 @@
+# Trusted Research Environments - task 1 : connect to user specific s3 storage.
+#  
+# This playbook is a proof of concept to automate user creation based on the transferred metadata
+# on a simplevm instance with enable metadata propagation.
+# Since this is only a proof of concept and any error handling is missing and the playbook shouldn't
+# used in a production environment.
+# 
+# The data returned by the metadaten server contains mainly some informations about the user 
+# propagated by LifeScience AAI/Perun:
+#
+#{
+#  "ip": "192.168.2.183",
+#  "userdata": {
+#    "VERSION": "1.0.0",
+#    "data": {
+#      "e999948fbf6e2ddf07ba0874886a5829c96b960e": {
+#        "username": "joe.user",
+#        "user_id": "XXXX",
+#        "public_keys": [
+#          "ssh-rsa YYYY"
+#        ]
+#      },
+#
+# POF tested on Ubuntu 24.04 based instance.
+
+
+- hosts: all 
+  become: 'yes'
+  tasks:
+    - name: Get metadata
+      ansible.builtin.shell: /etc/simplevm/get_metadata.sh | jq > /tmp/metadata
+    - name: Include metadata as variable
+      ansible.builtin.include_vars:
+        file: /tmp/metadata
+        name: metadata
+    - name: debug 
+      ansible.builtin.debug:
+        msg: "{{ met}}"
+      with_dict: "{{metadata}}"
+
+    - name: Create the user
+      ansible.builtin.user:
+        name: "{{ item.value.username }}"
+        state: present
+        shell: /bin/bash  
+        create_home: yes  # create home directory for the user
+      with_dict: "{{metadata.userdata.data}}"
+
+    - name: Set SSH key for the user
+      ansible.posix.authorized_key:
+        user: "{{ item.value.username }}"
+        state: present
+        key: "{{ item.value.public_keys[0]}}"
+      with_dict: "{{metadata.userdata.data}}"
+
+  
