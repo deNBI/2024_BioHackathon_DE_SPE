@@ -32,6 +32,8 @@ You can use the same compute instance to deploy a Slurm cluster. To do this:
 1. Clone the original [BiBiGrid repository](https://github.com/BiBiServ/bibigrid).
 2. Follow the [Hands-On BiBiGrid Tutorial](https://github.com/deNBI/bibigrid_clum) for detailed instructions.
 
+Please Note: Depending on the amount of user and the size of the environment required for workdlow execution, increase the size of the volume. Consider to reserve ~5GB per user + conde environment.
+
 ## Step 2: Configure the Master Node
 
 After successfully deployment of the cluster, it will initially consist of a single master node. Before accessing the master node, ensure the following configurations are completed:
