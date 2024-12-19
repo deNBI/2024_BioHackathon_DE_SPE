@@ -17,7 +17,7 @@ This guide provides a step-by-step process to set up a Secure Research Environme
 Begin by launching an instance to deploy [WESkit](https://gitlab.com/one-touch-pipeline/weskit) for workflow execution via its GUI. Follow the official [WESkit documentation](https://gitlab.com/one-touch-pipeline/weskit/documentation/-/blob/master/deployment/getting_started.md) for detailed instructions.
 
 ### Quick Setup for WESkit Deployment
-Run the following commands to deploy WESkit using Docker Swarm:
+Run the following commands to prepare WESkit deployment using Docker Swarm:
 ```bash
 git clone https://gitlab.com/one-touch-pipeline/weskit/deployment
 cd deployment
@@ -34,7 +34,7 @@ You can deploy a Slurm cluster using the same compute instance:
 1. Clone the [BiBiGrid repository](https://github.com/BiBiServ/bibigrid).
 2. Follow the [Hands-On BiBiGrid Tutorial](https://github.com/deNBI/bibigrid_clum)  for detailed instructions.
 
-**Note: Adjust the volume size based on the number of users and workflow requirements, reserving approximately 5GB per user plus the Conda environment size.**
+**Note: Adjust the volume size based on the number of users and workflow requirements, reserving approximately 5GB per user plus the Conda environment.**
 
 ## Step 2: Configure the Master Node
 
@@ -44,7 +44,7 @@ After deploying the cluster, it initially consists of a single master node. Comp
 Ensure the default group is added to the master node for proper communication with the OpenStack API.
 
 ### Change DNS Resolver ###
-BiBiGrid uses a custom *dnsmasq* resolver (8.8.8.8). To ensure proper deployment of both master and worker nodes, adjust the DNS settings to match *denbi-cloud.bihealth.org (127.0.0.53)*.
+BiBiGrid uses a custom `dnsmasq` resolver (8.8.8.8). To ensure proper deployment of both master and worker nodes, adjust the DNS settings to match `denbi-cloud.bihealth.org (127.0.0.53)`.
 
 ## Step 3: Verify OpenStack API Connectivity
 Ensure the OpenStack API endpoints are reachable by running the following command:
@@ -54,8 +54,8 @@ curl https://denbi-cloud.bihealth.org:13774/v2.1
 ## Step 4: Configure WESkit
 To allow authenticated users to submit requests to the BiBiGrid (Slurm) cluster, configure the Slurm connection and LS Login.
 
-## Step 4.1: Slurm Cluster
-If using Docker Swarm deployment, update config_login.yaml with the Slurm credentials:
+### Step 4.1: Slurm Cluster
+If using Docker Swarm deployment, update `config_login.yaml` with the Slurm credentials:
 
 ```bash
 executor:
@@ -65,18 +65,18 @@ executor:
   singularity_containers_dir: None
   login:
     username: "userA"
-    host: "10.0.2.193"
+    host: "IP"
     port: 22
-    knownhosts_file: "/home/weskit/weskit_config_adapted/known_hosts"
-    keyfile: "/home/weskit/weskit_config_adapted/user_accounts.txt"
+    knownhosts_file: "/home/weskit/weskit_config/known_hosts"
+    keyfile: "/home/weskit/weskit_config/user_accounts.txt"
     keyfile_passphrase: ""
     keepalive_interval: "30s"
     keepalive_count_max: 5
 ```
 
-The given executor configuration defines the remote data and workflow directory on the remote side. Setting singularity_containers_dir to None tells the cluster that the workflow engine (Snakemake, Nextflow) is executed via the e.g. conda environment and not via singularity and the corresponding container.
+The given executor configuration defines the remote data and workflow directory on the remote side. Setting `singularity_containers_dir` to `None` tells the cluster that the workflow engine (Snakemake, Nextflow) is executed via the e.g. conda environment and not via singularity and the corresponding container.
 
-Within the login section user and host are provided. Keyfile indicates the path to the database(.txt) that hosts information on the user and a path to the private_key. During the deployment only userA is able to submit job. Loging into the GUI, via LS Login or any other OAuth2 suporting Identity provider, the current user is overwritten by the newly authenticated one.
+Within the login section user and host are provided. Keyfile indicates the path to the database (.txt) that hosts information on the user and a path to the private_key. During the deployment only userA is able to submit job. Loging into the GUI, via LS Login or any other OAuth2 suporting Identity provider, the current user is overwritten by the newly authenticated one once a request is submitted.
 
 Furthermore, the admin needs to ensure that all required parameters workflow engine parameters are set. e.g. if a snakemake workflow needs conda environment for the whole workflow or individual tasks some paramters needs activation/configuration.
 
@@ -93,10 +93,10 @@ e.g.
 ```
 
 
-## Step 4.2 Configure LS Login
-Since WESkit lacks native user management, use an external OAuth2 Identity Provider like LS Login. Configure it in *weskit_stack_base.yaml*:
+### Step 4.2 Configure LS Login
+Since WESkit lacks native user management, use an external OAuth2 Identity Provider like LS Login. Configure it in `weskit_stack_base.yaml`:
 
-Please use **weskit_stack_base.yaml** for the configuration.
+Please use `weskit_stack_base.yaml` for the configuration.
 Make sure that the REST service get all the needed OIDC credentials which you will get uppon service registration. Those are
 ```bash
       OIDC_ISSUER_URL: "https://login.elixir-czech.org/oidc/"
@@ -109,10 +109,10 @@ and
 ```bash
 WESKIT_JWT_DECODE_AUDIENCE: ""
 ```
-**WESKIT_JWT_DECODE_AUDIENCE** is your **OIDC_CLIENTID**
+`WESKIT_JWT_DECODE_AUDIENCE` is your `OIDC_CLIENTID`
 
-For the dashboard/gui you need to provide additional to the OIDC credential JWT information. As an admin make sure that they are properly set. See [Flask-JWT-Extended Docu](https://flask-jwt-extended.readthedocs.io/en/stable/) for a detailed parameter explanation.
-Please note that the parameters are prefixed with "WESKIT_" 
+For the dashboard/GUI you need to provide additional to the OIDC credential JWT information. As an admin, make sure that they are properly set. See [Flask-JWT-Extended Docu](https://flask-jwt-extended.readthedocs.io/en/stable/) for a detailed parameter explanation.
+Please note that the parameters are prefixed with "WESKIT_".
 
 ```bash
 WESKIT_LOGIN: "true"
@@ -135,7 +135,7 @@ WESKIT_SECRET_KEY: "your_custom_secret"
 Feel free to adjust some of the JWT parameters according to your needs.
 
 ## Step 5 :Certificates ##
-If your deployment is connected to a domain, provide the certificates in *weskit_stack_base.yaml* under the secrets section:
+If your deployment is connected to a domain, provide the certificates in `weskit_stack_base.yaml` under the secrets section:
 
 yaml
 
@@ -153,7 +153,7 @@ as well as to the trafic configuration:
 - source: weskit_domain.crt
     target: /certs/weskit_domain.crt
 ```
-and adjust the deployment/traefik/traefik.toml file:
+and adjust the `deployment/traefik/traefik.toml` file:
 
 ```bash
 [tls.stores]
@@ -169,22 +169,24 @@ and adjust the deployment/traefik/traefik.toml file:
 ```
 
 ## Step 6: Add user and install Conda anvironment
-Addd user via add_user.sh script to the cluster nodes. Before that you need to provide the public key of the respective user. Private and public key can be generated localy and then put to the cluster nodes via:
+Addd user via `add_user.sh` script to the cluster nodes. Before that you need to provide the public key of the respective user name. Private and public key can be generated localy and then put to the cluster nodes:
 ```bash
 ssh-keygen -f ~/.ssh/user-ecdsa -t ecdsa -b 521
 ```
-Users can be created on using **add_user.sh** script provided below.
+Users can be created on using `add_user.sh` script provided below.
 
 Next install the conda environment that hosts Snakemake and Nextflow engines.
+See conda environment below.
 ```bash
 wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 bash Miniforge3-$(uname)-$(uname -m).sh
 /bin/bash
+conda env create -f spe.yaml
 ```
 and enable automatic conda activation uppon connection of the user.
 
 
-Before WESkit deployment add user to weskit_config/user_accounts.txt and its private key to a folder that is mounted into both REST and Worker service.
+Before WESkit deployment add user to `weskit_config/user_accounts.txt` and its private key to the same folder that is mounted into both REST and Worker service.
 
 Starting from your deployment folder WESkit can be started using:
 ```bash
@@ -251,7 +253,7 @@ echo "User '$USERNAME' has been created and configured for SSH access on port 22
 echo "Public key from '$PUBLIC_KEY_PATH' has been added for authentication."
 ```
 
-**conda environment**
+**spe.yaml**
 
 ```bash
 name: base
@@ -446,4 +448,4 @@ dependencies:
 ```
 
 ## Step 7: Submit Jobs
-Once the setup is complete, you can submit your first sbatch jobs. These jobs will automatically trigger the startup of worker nodes in the cluster.
+Once the setup is completed, any authenticateduser can submit jobs via the GUI. These jobs will automatically trigger the startup of worker nodes in the cluster.
