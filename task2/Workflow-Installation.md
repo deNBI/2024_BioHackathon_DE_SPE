@@ -5,7 +5,7 @@ This is step-by-step guide for installing a new workflow in [WESkit](https://git
 ## Prerequisites
 
 - WESkit installation
-- Execution backend (e.g. Slurm, Kubernetes)
+- Execution backend (e.g. Slurm)
 
 ## Configure the Backend
 
