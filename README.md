@@ -11,4 +11,13 @@ In this de.NBI Biohackathon project, we will use existing ELIXIR services as wel
 
 In this project, we will set up the secure processing environment as an example platform, provide detailed documentation and describe all necessary processes so that the environment can be transferred to other use cases in the de.NBI cloud. This will ultimately enable other de.NBI Cloud locations and potentially other cloud providers in ELIXIR to easily adapt the environment to their needs. Through the use of established components and infrastructure, we maximize the chance of a successful outcome by the end of the hackathon.
 
+**Tasks**:
+
+Task 1: Deployment of MinIO in the de.NBI cloud and using MinIO for sharing sensitive data with researchers. [Results](./task1)
+
+Task 2: Using WESKIT & SLURM (BiBiGrid) to build a Secure Processing Environment (SPE) in the de.NBI cloud. [Results](./task2)
+
+Task 3: TES-K & confidential computing in the de.NBI cloud. [Results](https://github.com/deNBI/deNBI-cloud-kubeone)
+
+**Report**:
 BioHackrXiv  Report: https://github.com/deNBI/2024_BioHackathon_DE_SPE_report
