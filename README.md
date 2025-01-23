@@ -4,6 +4,16 @@
 - Nils Hoffmann (FZ Jülich) n.hoffmann@fz-juelich.de
 - Sven Olaf Twardziok (BIH@Charité) sven.twardziok@bih-charite.de
 
+**Participants**:
+- Valentin Schneider-Lunitz, BIH@Charité
+- Martin Braun, BIH@Charité
+- Jacobo Miranda, EMBL Heidelberg
+- Jan Krüger, FZ Jülich
+- Xaver Stiensmeier, Uni Bielefeld
+- Alex Kanitz, SIB
+- Carsten Schelp, SURF
+- ...
+
 **Abstract**:
 In biomedical research, sensitive data from humans is a critical asset for the ability to carry out essential research in even potentially critical situations, e.g. as proven during the COVID-19 pandemic. Providing easy access to data speeds up the research process, resulting in faster development of new drugs, or exploring and further understanding of rare diseases. With the German model project for comprehensive diagnostics and therapy identification using genome sequencing for rare and oncological diseases according to §64e, Sozialgesetzbuch and the European Health Data Space (EHDS), more clinical data from daily routine will be available for translational research in the future in Germany and in Europe. However, a high level of protection of sensitive data must be implemented. Today, different approaches for implementing secure environments exist. The concept of the 5 safes (Safe projects, Safe people, Safe settings, Safe data, Safe outputs) is used to build Trusted Research Environments (TRE) in the UK and the EHDS calls for the development of Secure Processing Environments (SPE) for the processing of health data for research. In both approaches, technical solutions are used to ensure that sensitive data is highly protected.
 
