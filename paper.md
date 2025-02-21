@@ -14,11 +14,16 @@ affiliations:
   - name: Berlin Institute of Health at Charité – Universitätsmedizin Berlin, Charitéplatz 1, 10117 Berlin, Germany
     index: 1
 
-date: 23 January 2025
-bibliography: paper.bib
-authors_short: Last et al. (2021) BioHackrXiv  template
-group: BioHackrXiv
-event: BioHackathon Germany 2024
+date: "21 February 2025"
+cito-bibliography: "paper.bib"
+event: "BHG2024"
+biohackathon_name: "BioHackathon Germany 2024"
+biohackathon_url: "https://biohackathon-europe.org/"
+biohackathon_location: "Kassel, Germany, 2024"
+git_url: "https://github.com/deNBI/2024_BioHackathon_DE_SPE"
+group: Project x
+authors_short: Blubb \emph{et al.}
+
 ---
 
 # Introduction
