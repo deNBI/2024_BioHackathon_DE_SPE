@@ -98,7 +98,7 @@ In order to mount MinIO to a virtual machine we modified an existing Ansible pla
 
 In this section we explain how to add a Keycloak instance between your service (e.g. MinIO) and your identity provider (e.g. LS AAI). This setup allows for a more direct management of groups and rights since you are able to handle those on the keycloak level instead of the individual identity provider level.
 
-![](https://raw.githubusercontent.com/deNBI/2024_BioHackathon_DE_SPE/refs/heads/main/figures/fa52187f-d8d7-4a63-be86-6b02853942f9.png)
+![Figure 1: concept for using MinIO with LS AAI at the de.NBI cloud site in Bielefeld.](https://raw.githubusercontent.com/deNBI/2024_BioHackathon_DE_SPE/refs/heads/main/figures/fa52187f-d8d7-4a63-be86-6b02853942f9.png)
 
 ## Concept
 
@@ -122,7 +122,7 @@ TES-K was deployed at different sites according to the online tutorial provided 
 
 At the de.NBI cloud site at the Charité we established a demonstration platform during the BioHackathon in order to execute demonstration workflows in a controlled environment. The platform is based on an instance of the workflow execution service [WESkit](https://gitlab.com/one-touch-pipeline/weskit), which submits workflows to a SLURM cluster that was build in the cloud using the tool [BiBiGrid](https://github.com/BiBiServ/bibigrid). Authenticated ([LS Login](https://lifescience-ri.eu/ls-login/)) and authorized users are able to execute secure and validated Snakemake and Nextflow workflows on sensitive data using WESkit, an implementation of the [GA4GH WES](https://www.ga4gh.org/product/workflow-execution-service-wes/) standard. The actual computation will be relayed to a SLURM cluster system based on BiBiGrid that is deployed within the secure processing environment. WESkit will execute the workflows on behalf of the users on the SLURM cluster. The sensitive data are available via the cluster's file system for authorized users. This allows certain data sets to be shared, while other data remains protected from user access. Scrips and documentation are available in the [GitHub repository](https://github.com/deNBI/2024_BioHackathon_DE_SPE).
 
-![](https://raw.githubusercontent.com/deNBI/2024_BioHackathon_DE_SPE/refs/heads/main/figures/spe4hd_slide.png)
+![Figure 2: demonstration platform at the de.NBI cloud site at the Charité.](https://raw.githubusercontent.com/deNBI/2024_BioHackathon_DE_SPE/refs/heads/main/figures/spe4hd_slide.png)
 
 # Discussion and/or Conclusion
 
