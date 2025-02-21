@@ -10,10 +10,35 @@ authors:
   - name: Sven Olaf Twardziok
     orcid: 0000-0002-0326-5704
     affiliation: 1
+  - name: Martin Braun
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 1
+  - name: Valentin-Schneider-Lunitz
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 1
+  - name: Landfried Kraatz
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 1
+  - name: Carsten Schelp
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 1
+  - name: Xaver Stiensmeier
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 1 
+  - name: Jan Krüger
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 1 
+  - name: Sanjay Kumar Srikakulam
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 1 
+  - name: Nils Hoffmann
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 2
 affiliations:
   - name: Berlin Institute of Health at Charité – Universitätsmedizin Berlin, Charitéplatz 1, 10117 Berlin, Germany
     index: 1
-
+  - name: Forschungszentrum Jülich
+    index: 2
 date: "21 February 2025"
 cito-bibliography: "paper.bib"
 event: "BHG2024"
