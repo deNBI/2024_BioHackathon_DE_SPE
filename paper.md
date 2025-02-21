@@ -10,44 +10,55 @@ authors:
   - name: Sven Olaf Twardziok
     orcid: 0000-0002-0326-5704
     affiliation: 1
-  - name: Martin Braun
+  - name: Nils Hoffmann
     orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 1
-  - name: Valentin-Schneider-Lunitz
+    affiliation: 2
+  - name: Carsten Schelp
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 3
+  - name: Jan Krüger
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 4 
+  - name: Xaver Stiensmeier
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 4 
+  - name: Alex Kanitz
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 5
+  - name: Sanjay Kumar Srikakulam
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 6 
+  - name: Valentin Schneider-Lunitz
     orcid: xxxx-xxxx-xxxx-xxxx
     affiliation: 1
   - name: Landfried Kraatz
     orcid: xxxx-xxxx-xxxx-xxxx
     affiliation: 1
-  - name: Carsten Schelp
+  - name: Martin Braun
     orcid: xxxx-xxxx-xxxx-xxxx
     affiliation: 1
-  - name: Xaver Stiensmeier
-    orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 1 
-  - name: Jan Krüger
-    orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 1 
-  - name: Sanjay Kumar Srikakulam
-    orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 1 
-  - name: Nils Hoffmann
-    orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 2
 affiliations:
-  - name: Berlin Institute of Health at Charité – Universitätsmedizin Berlin, Charitéplatz 1, 10117 Berlin, Germany
+  - name: Berlin Institute of Health at Charité – Universitätsmedizin Berlin, 10117 Berlin, Germany
     index: 1
-  - name: Forschungszentrum Jülich
+  - name: Forschungszentrum Jülich, 52428 Jülich, Germany
     index: 2
+  - name: SURF, 3501 DA Utrecht, Netherlands 
+    index: 3
+  - name: Center for Biotechnology - CeBiTec, Universität Bielefeld, 33615 Bielefeld, Germany 
+    index: 4
+  - name: Department of Biosystems Science and Engineering, ETH Zurich, Basel, 4058, Switzerland
+    index: 5
+  - name: Albert-Ludwigs-Universität Freiburg, 79085 Freiburg, Germany 
+    index: 6
 date: "21 February 2025"
 cito-bibliography: "paper.bib"
 event: "BHG2024"
 biohackathon_name: "BioHackathon Germany 2024"
-biohackathon_url: "https://biohackathon-europe.org/"
+biohackathon_url: "https://www.denbi.de/de-nbi-events/1678-biohackathon-germany-3"
 biohackathon_location: "Kassel, Germany, 2024"
 git_url: "https://github.com/deNBI/2024_BioHackathon_DE_SPE"
-group: Project x
-authors_short: Blubb \emph{et al.}
+group: Project 3
+authors_short: Sven Twardziok, Nils Hoffmann \emph{et al.}
 
 ---
 
@@ -55,7 +66,7 @@ authors_short: Blubb \emph{et al.}
 
 In biomedical research, sensitive data from humans is a critical asset for the ability to carry out essential research in even potentially critical situations, e.g. as proven during the COVID-19 pandemic. Providing easy access to data speeds up the research process, resulting in faster development of new drugs, or exploring and further understanding of rare diseases. With the German model project for comprehensive diagnostics and therapy identification using genome sequencing for rare and oncological diseases according to §64e, Sozialgesetzbuch and the European Health Data Space (EHDS), more clinical data from daily routine will be available for translational research in the future in Germany and in Europe. However, a high level of protection of sensitive data must be implemented. Today, different approaches for implementing secure environments exist. The concept of the 5 safes (Safe projects, Safe people, Safe settings, Safe data, Safe outputs) is used to build Trusted Research Environments (TRE) in the UK and the [EHDS](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A52022PC0197) calls for the development of Secure Processing Environments (SPE) for the processing of health data for research. In both approaches, technical solutions are used to ensure that sensitive data is highly protected.
 
-In this Biohackathon Germany project, we used existing services from ELIXIR Europe [@ELIXIR_2021] as well as external tools to create a technical foundation for reusable Secure Processing Environments (SPEs) in the [de.NBI cloud](https://cloud.denbi.de/) and in the [SURF research cloud](https://researchcloud.surf.nl/). Specifically, the authentication was based on [Life Science Login](https://lifescience-ri.eu/ls-login/) for authentication and authorization. We established the open source object storage platform MinIO for sharing sensitive data with users. Hereby, we extended deployment of virtual machines with MinIO access, so that users are able to access shared data in their custom environments. For execution of workflows on protected data, we developed a demonstration platform combining the workflow execution system WESkit with the BiBiGrid system for creation of a SLURM cluster. The TES-K software has been deployed to multiple cloud locations to connect these sites to a federated processing network operated by ELIXIR.
+In this Biohackathon Germany project, we used existing services from ELIXIR Europe [@ELIXIR_2021] as well as external tools to create a technical foundation for reusable Secure Processing Environments in the [de.NBI cloud](https://cloud.denbi.de/) as well as in the [SURF research cloud](https://researchcloud.surf.nl/). Specifically, the authentication was based on [Life Science Login](https://lifescience-ri.eu/ls-login/) for authentication and authorization. We established the open source object storage platform MinIO for sharing sensitive data with users. Hereby, we extended deployment of virtual machines with MinIO access, so that users are able to access shared data in their custom environments. For execution of workflows on protected data, we developed a demonstration platform combining the workflow execution system WESkit with the BiBiGrid system for creation of a SLURM cluster. The TES-K software has been deployed to multiple cloud locations to connect these sites to a federated processing network operated by ELIXIR.
 
 
 # MinIO
@@ -87,7 +98,7 @@ In order to mount MinIO to a virtual machine we modified an existing Ansible pla
 
 In this section we explain how to add a Keycloak instance between your service (e.g. MinIO) and your identity provider (e.g. LS AAI). This setup allows for a more direct management of groups and rights since you are able to handle those on the keycloak level instead of the individual identity provider level.
 
-![](https://elixir-hedgedoc.rahtiapp.fi/uploads/fa52187f-d8d7-4a63-be86-6b02853942f9.png)
+![](https://raw.githubusercontent.com/deNBI/2024_BioHackathon_DE_SPE/refs/heads/main/figures/fa52187f-d8d7-4a63-be86-6b02853942f9.png)
 
 ## Concept
 
@@ -111,11 +122,13 @@ TES-K was deployed at different sites according to the online tutorial provided 
 
 At the de.NBI cloud site at the Charité we established a demonstration platform during the BioHackathon in order to execute demonstration workflows in a controlled environment. The platform is based on an instance of the workflow execution service [WESkit](https://gitlab.com/one-touch-pipeline/weskit), which submits workflows to a SLURM cluster that was build in the cloud using the tool [BiBiGrid](https://github.com/BiBiServ/bibigrid). Authenticated ([LS Login](https://lifescience-ri.eu/ls-login/)) and authorized users are able to execute secure and validated Snakemake and Nextflow workflows on sensitive data using WESkit, an implementation of the [GA4GH WES](https://www.ga4gh.org/product/workflow-execution-service-wes/) standard. The actual computation will be relayed to a SLURM cluster system based on BiBiGrid that is deployed within the secure processing environment. WESkit will execute the workflows on behalf of the users on the SLURM cluster. The sensitive data are available via the cluster's file system for authorized users. This allows certain data sets to be shared, while other data remains protected from user access. Scrips and documentation are available in the [GitHub repository](https://github.com/deNBI/2024_BioHackathon_DE_SPE).
 
+![](https://raw.githubusercontent.com/deNBI/2024_BioHackathon_DE_SPE/refs/heads/main/figures/spe4hd_slide.png)
+
 # Discussion and/or Conclusion
 
-In the BioHackathon Germany project, we utilized various open-source services to facilitate the handling of sensitive data in the de.NBI Cloud and the SURF Cloud. Building on previous BioHackathon Europe projects (2021, 2022, and 2024), this initiative aligns with the activities of the ELIXIR Compute Platform. The project's outcomes support scientists in establishing secure processing environments by the development of project-specific cloud platforms [@f1000cloud_2024]. Additionally, through the extension of the ELIXIR Cloud AAI documentation, the results are available to users within the ELIXIR community.
+In this BioHackathon Germany project, we utilized various open-source services to facilitate the handling of sensitive data in the de.NBI Cloud and the SURF Cloud. Building on previous BioHackathon Europe projects (2021, 2022, and 2024), this initiative aligns with the activities of the ELIXIR Compute Platform. The project's outcomes support scientists in establishing secure processing environments and the development of project-specific cloud platforms [@f1000cloud_2024]. Additionally, through the extension of the ELIXIR Cloud AAI documentation, the results are available to users within the ELIXIR community.
 
-Workflow systems support the implementation of FAIR principles [@FAIR_2016] and contribute to the secure processing of sensitive data. The GA4GH defines various specifications for executing workflows in the cloud through its Cloud Work Stream [@GA4GH_2021]. Weskit implements GA4GH WES and supports workflow systems Snakemake [@Nextflow_2017] and Nextflow [@Snakemake_2021]. By allowing only secure workflows, Weskit ensures secure processing of sensitive data. In combination with BiBiGrid for setting up cluster systems and using the clusters permission systems to ensure users can only access files they are authorized for. This combination of Weskit and BiBiGrid can advance the establishment of Secure Processing Environments (SPEs) specifically in the de.NBI Cloud.
+Execution of data processing workflows on sensitive data was demonstrated on demo platform, which was developed using the tool WESkit and BiBiGrid. Workflow systems support the implementation of FAIR principles [@FAIR_2016] and contribute to the secure processing of sensitive data. The GA4GH defines various specifications for executing workflows in the cloud through its Cloud Work Stream [@GA4GH_2021]. WESkit implements GA4GH WES and supports workflow systems Snakemake [@Nextflow_2017] and Nextflow [@Snakemake_2021]. By allowing only secure workflows, Weskit ensures secure processing of sensitive data. In combination with BiBiGrid for setting up cluster systems and using the clusters permission systems to ensure users can only access files they are authorized for. This combination of Weskit and BiBiGrid can advance the establishment of Secure Processing Environments (SPEs) specifically in the de.NBI Cloud.
 
 # GitHub repositories and data repositories
 
