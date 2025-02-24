@@ -7,53 +7,53 @@ tags:
   - Task Execution Service (TES)
 
 authors:
-  - name: Sven Olaf Twardziok
-    orcid: 0000-0002-0326-5704
+  - name: Martin Braun
+    orcid: xxxx-xxxx-xxxx-xxxx
     affiliation: 1
-  - name: Nils Hoffmann
-    orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 2
-  - name: Carsten Schelp
-    orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 3
-  - name: Jan Krüger
-    orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 4 
-  - name: Xaver Stiensmeier
-    orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 4 
   - name: Alex Kanitz
     orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 5
-  - name: Sanjay Kumar Srikakulam
-    orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 6
-  - name: Jacobo Miranda
-    orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 7
-  - name: Valentin Schneider-Lunitz
-    orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 1
+    affiliation: 2
   - name: Landfried Kraatz
     orcid: xxxx-xxxx-xxxx-xxxx
     affiliation: 1
-  - name: Martin Braun
+  - name: Jan Krüger
     orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 3 
+  - name: Jacobo Miranda
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 4
+  - name: Carsten Schelp
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 5
+  - name: Valentin Schneider-Lunitz
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 1
+  - name: Sanjay Kumar Srikakulam
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 6
+  - name: Xaver Stiensmeier
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 3 
+  - name: Nils Hoffmann *
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 7
+  - name: Sven Olaf Twardziok *
+    orcid: 0000-0002-0326-5704
     affiliation: 1
 affiliations:
   - name: Berlin Institute of Health at Charité – Universitätsmedizin Berlin, 10117 Berlin, Germany
     index: 1
-  - name: Forschungszentrum Jülich, 52428 Jülich, Germany
-    index: 2
-  - name: SURF, 3501 DA Utrecht, Netherlands 
-    index: 3
-  - name: Center for Biotechnology - CeBiTec, Universität Bielefeld, 33615 Bielefeld, Germany 
-    index: 4
   - name: Department of Biosystems Science and Engineering, ETH Zurich, Basel, 4058, Switzerland
+    index: 2
+  - name: Center for Biotechnology - CeBiTec, Universität Bielefeld, 33615 Bielefeld, Germany 
+    index: 3
+  - name: EMBL Heidelberg, 69117 Heidelberg, Germany 
+    index: 4
+  - name: SURF, 3501 DA Utrecht, Netherlands 
     index: 5
   - name: Albert-Ludwigs-Universität Freiburg, 79085 Freiburg, Germany 
     index: 6
-  - name: EMBL Heidelberg, 69117 Heidelberg, Germany 
+  - name: Forschungszentrum Jülich, 52428 Jülich, Germany
     index: 7
 date: "21 February 2025"
 cito-bibliography: "paper.bib"
@@ -63,7 +63,7 @@ biohackathon_url: "https://www.denbi.de/de-nbi-events/1678-biohackathon-germany-
 biohackathon_location: "Kassel, Germany, 2024"
 git_url: "https://github.com/deNBI/2024_BioHackathon_DE_SPE"
 group: Project 3
-authors_short: Sven Twardziok, Nils Hoffmann \emph{et al.}
+authors_short: Nils Hoffmann, Sven Twardziok \emph{et al.}
 
 ---
 
