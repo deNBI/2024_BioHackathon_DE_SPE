@@ -27,7 +27,10 @@ authors:
     affiliation: 5
   - name: Sanjay Kumar Srikakulam
     orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 6 
+    affiliation: 6
+  - name: Jacobo Miranda
+    orcid: xxxx-xxxx-xxxx-xxxx
+    affiliation: 7
   - name: Valentin Schneider-Lunitz
     orcid: xxxx-xxxx-xxxx-xxxx
     affiliation: 1
@@ -50,6 +53,8 @@ affiliations:
     index: 5
   - name: Albert-Ludwigs-Universität Freiburg, 79085 Freiburg, Germany 
     index: 6
+  - name: EMBL Heidelberg, 69117 Heidelberg, Germany 
+    index: 7
 date: "21 February 2025"
 cito-bibliography: "paper.bib"
 event: "BHG2024"
