@@ -14,7 +14,7 @@ authors:
     orcid: xxxx-xxxx-xxxx-xxxx
     affiliation: 2
   - name: Landfried Kraatz
-    orcid: xxxx-xxxx-xxxx-xxxx
+    orcid: 0009-0009-5215-825X
     affiliation: 1
   - name: Jan Krüger
     orcid: xxxx-xxxx-xxxx-xxxx
