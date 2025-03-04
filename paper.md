@@ -35,7 +35,7 @@ authors:
     orcid: 0009-0005-3274-122X
     affiliation: 3 
   - name: Nils Hoffmann *
-    orcid: xxxx-xxxx-xxxx-xxxx
+    orcid: 0000-0002-6540-6875
     affiliation: 7
   - name: Sven Olaf Twardziok *
     orcid: 0000-0002-0326-5704
