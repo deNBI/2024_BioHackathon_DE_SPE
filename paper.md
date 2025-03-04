@@ -10,51 +10,53 @@ authors:
   - name: Martin Braun
     orcid: xxxx-xxxx-xxxx-xxxx
     affiliation: 1
-  - name: Alex Kanitz
+  - name: Alexander Kanitz
     orcid: 0000-0002-3468-0652
-    affiliation: 2
+    affiliation: 2,3
   - name: Landfried Kraatz
     orcid: 0009-0009-5215-825X
     affiliation: 1
   - name: Jan Krüger
     orcid: 0009-0006-4245-1653
-    affiliation: 3 
+    affiliation: 4 
   - name: Jacobo Miranda
     orcid: xxxx-xxxx-xxxx-xxxx
-    affiliation: 4
+    affiliation: 5
   - name: Carsten Schelp
     orcid: 0009-0008-5871-1485
-    affiliation: 5
+    affiliation: 6
   - name: Valentin Schneider-Lunitz
     orcid: 0000-0002-3980-3789
     affiliation: 1
   - name: Sanjay Kumar Srikakulam
     orcid: 0000-0002-1752-5060
-    affiliation: 6
+    affiliation: 7
   - name: Xaver Stiensmeier
     orcid: 0009-0005-3274-122X
-    affiliation: 3 
+    affiliation: 4 
   - name: Nils Hoffmann *
     orcid: 0000-0002-6540-6875
-    affiliation: 7
+    affiliation: 8
   - name: Sven Olaf Twardziok *
     orcid: 0000-0002-0326-5704
     affiliation: 1
 affiliations:
   - name: Berlin Institute of Health at Charité – Universitätsmedizin Berlin, 10117 Berlin, Germany
     index: 1
-  - name: Department of Biosystems Science and Engineering, ETH Zurich, Basel, 4058, Switzerland
+  - name: Biozentrum, University of Basel, 4056 Basel, Switzerland
     index: 2
-  - name: Center for Biotechnology - CeBiTec, Universität Bielefeld, 33615 Bielefeld, Germany 
+  - name: Swiss Institute of Bioinformatics, 1015 Lausanne, Switzerland
     index: 3
-  - name: EMBL Heidelberg, 69117 Heidelberg, Germany 
+  - name: Center for Biotechnology - CeBiTec, Universität Bielefeld, 33615 Bielefeld, Germany 
     index: 4
-  - name: SURF, 3501 DA Utrecht, Netherlands 
+  - name: EMBL Heidelberg, 69117 Heidelberg, Germany 
     index: 5
-  - name: Albert-Ludwigs-Universität Freiburg, 79085 Freiburg, Germany 
+  - name: SURF, 3501 DA Utrecht, Netherlands 
     index: 6
-  - name: Forschungszentrum Jülich, 52428 Jülich, Germany
+  - name: Albert-Ludwigs-Universität Freiburg, 79085 Freiburg, Germany 
     index: 7
+  - name: Forschungszentrum Jülich, 52428 Jülich, Germany
+    index: 8
 date: "21 February 2025"
 cito-bibliography: "paper.bib"
 event: "BHG2024"
