@@ -17,7 +17,7 @@ authors:
     orcid: 0009-0009-5215-825X
     affiliation: 1
   - name: Jan Krüger
-    orcid: xxxx-xxxx-xxxx-xxxx
+    orcid: 0009-0006-4245-1653
     affiliation: 3 
   - name: Jacobo Miranda
     orcid: xxxx-xxxx-xxxx-xxxx
@@ -32,7 +32,7 @@ authors:
     orcid: 0000-0002-1752-5060
     affiliation: 6
   - name: Xaver Stiensmeier
-    orcid: xxxx-xxxx-xxxx-xxxx
+    orcid: 0009-0005-3274-122X
     affiliation: 3 
   - name: Nils Hoffmann *
     orcid: xxxx-xxxx-xxxx-xxxx
