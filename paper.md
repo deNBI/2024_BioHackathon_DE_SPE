@@ -8,7 +8,7 @@ tags:
 
 authors:
   - name: Martin Braun
-    orcid: xxxx-xxxx-xxxx-xxxx
+    orcid: 0009-0003-6061-0863
     affiliation: 1
   - name: Alexander Kanitz
     orcid: 0000-0002-3468-0652
@@ -145,6 +145,6 @@ Using the tools WESkit and BiBiGrid we developed a demonstration platform for pr
 
 # Acknowledgements
 
-We acknowledge support by de.NBI - the German Network for Bioinformatics Infrastructure and the de.NBI BioHackathon Germany 2024. This work was supported by the de.NBI Cloud within the German Network for Bioinformatics Infrastructure (de.NBI) and ELIXIR-DE (Forschungszentrum Jülich and W-de.NBI-001, W-de.NBI-004, W-de.NBI-008, W-de.NBI-010, W-de.NBI-013, W-de.NBI-014, W-de.NBI-016, W-de.NBI-022).
+We acknowledge support by de.NBI - the German Network for Bioinformatics Infrastructure and the de.NBI BioHackathon Germany 2024. This work was supported by the de.NBI Cloud within the German Network for Bioinformatics Infrastructure (de.NBI), de.KCD the German Competence Center Cloud Technologies for Data Management and Processing and ELIXIR-DE (Forschungszentrum Jülich and W-de.NBI-001, W-de.NBI-004, W-de.NBI-008, W-de.NBI-010, W-de.NBI-013, W-de.NBI-014, W-de.NBI-016, W-de.NBI-022).
 
 # References
