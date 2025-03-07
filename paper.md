@@ -20,7 +20,7 @@ authors:
     orcid: 0009-0006-4245-1653
     affiliation: 4 
   - name: Jacobo Miranda
-    orcid: xxxx-xxxx-xxxx-xxxx
+    orcid: 0009-0005-0673-021X
     affiliation: 5
   - name: Carsten Schelp
     orcid: 0009-0008-5871-1485
