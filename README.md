@@ -34,4 +34,4 @@ Task 2: Using WESKIT & SLURM (BiBiGrid) to build a Secure Processing Environment
 Task 3: TES-K & confidential computing in the de.NBI cloud. [Results](https://github.com/deNBI/deNBI-cloud-kubeone)
 
 **Report**:
-BioHackrXiv  Report: [PDF](https://github.com/deNBI/2024_BioHackathon_DE_SPE/blob/main/2025_02_21_paper_preview.pdf), [MD](https://github.com/deNBI/2024_BioHackathon_DE_SPE/blob/main/paper.md) (DOI / final report pending).
+BioHackrXiv  Report: [PDF](https://github.com/deNBI/2024_BioHackathon_DE_SPE/blob/main/2025_03_10_paper_preview.pdf), [MD](https://github.com/deNBI/2024_BioHackathon_DE_SPE/blob/main/paper.md) (DOI / final report pending).
