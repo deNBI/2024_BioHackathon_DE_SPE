@@ -5,15 +5,15 @@
 - Sven Olaf Twardziok (BIH@Charité) sven.twardziok@bih-charite.de
 
 **Participants**:
-- Valentin Schneider-Lunitz, BIH@Charité
-- Martin Braun, BIH@Charité
-- Landfried Kraatz, BIH@Charité
-- Jacobo Miranda, EMBL Heidelberg
-- Jan Krüger, FZ Jülich
-- Alex Kanitz, SIB
 - Carsten Schelp, SURF
+- Jan Krüger, FZ Jülich
 - Xaver Stiensmeier, Uni Bielefeld
-- ...
+- Alex Kanitz, SIB
+- Sanjay Kumar Srikakulam, Uni Freiburg
+- Valentin Schneider-Lunitz, BIH@Charité
+- Landfried Kraatz, BIH@Charité
+- Martin Braun, BIH@Charité
+- Jacobo Miranda, EMBL Heidelberg
 
 **Acknowledgements**:
 - de.NBI Cloud Team: David Weinholz, Viktor Rudko, Peter Belmann
@@ -34,4 +34,4 @@ Task 2: Using WESKIT & SLURM (BiBiGrid) to build a Secure Processing Environment
 Task 3: TES-K & confidential computing in the de.NBI cloud. [Results](https://github.com/deNBI/deNBI-cloud-kubeone)
 
 **Report**:
-BioHackrXiv  Report: [PDF](https://github.com/deNBI/2024_BioHackathon_DE_SPE/blob/main/2025_02_21_paper_preview.pdf), [MD](https://github.com/deNBI/2024_BioHackathon_DE_SPE/blob/main/paper.md)
+BioHackrXiv  Report: [PDF](https://github.com/deNBI/2024_BioHackathon_DE_SPE/blob/main/2025_02_21_paper_preview.pdf), [MD](https://github.com/deNBI/2024_BioHackathon_DE_SPE/blob/main/paper.md) (DOI / final report pending).
